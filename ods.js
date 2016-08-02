@@ -170,7 +170,7 @@ var parse_manifest = function(d, opts) {
 	}
 };
 var parse_text_p = function(text, tag) {
-	return utf8read(text.replace(/<text:s\/>/g," ").replace(/<[^>]*>/g,""));
+	return unescapexml(utf8read(text.replace(/<text:s\/>/g," ").replace(/<[^>]*>/g,"")));
 };
 
 var utf8read = function utf8reada(orig) {
